@@ -1,0 +1,20 @@
+{
+  "name": "xapicaliper",
+  "description": "Easily convert learning activities to xAPI and Caliper statements",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nicolaasmatthijs/xapicaliper"
+  },
+  "main": "./lib/api.js",
+  "dependencies": {
+    "caliperjs": "git://github.com/IMSGlobal/caliper-js-public.git#public",
+    "joi": "latest",
+    "lodash": "latest",
+    "request": "latest",
+    "tincanjs": "latest"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
