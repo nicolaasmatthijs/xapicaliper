@@ -12,7 +12,8 @@
     "joi": "latest",
     "lodash": "latest",
     "request": "latest",
-    "tincanjs": "latest"
+    "tincanjs": "latest",
+    "uuid": "latest"
   },
   "engines": {
     "node": ">=0.10"
