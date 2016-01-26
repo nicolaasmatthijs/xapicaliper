@@ -185,9 +185,74 @@ xapicaliper.session.navigateToPage({ <see config> }, {
 
 #### Create course
 
+#####xapicaliper.course.create(config, statement, callback)
+
+A learning activity where a user creates a new course.
+
+The following metadata properties can be provided:
+
+* **`id`**            (required):             The URL of the course
+* **`name`**          (required):             The name of the course
+* **`description`**   (optional):             The description of the course
+* **`start`**         (optional):             The time at which the course starts
+* **`end`**           (optional):             The time at which the course ends
+
+An example could look like this:
+
+```
+xapicaliper.course.create({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111',
+    'name': 'Biology 101',
+    'description': 'Introductory course in Biology',
+    'start': '2014-03-01T01:28:12.000Z',
+    'end': '2014-06-01T23:59:59.000Z'
+  }
+}, function() { <see callback> });
+```
+
 #### Enroll course
 
+#####xapicaliper.course.enroll(config, statement, callback)
+
+A learning activity where a user enrolls in a course.
+
+The following metadata properties can be provided:
+
+* **`course`**        (required):             The URL of the course in which the student enrolls
+
+An example could look like this:
+
+```
+xapicaliper.course.enroll({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'course': 'https://bcourses.berkeley.edu/api/v1/courses/111'
+  }
+}, function() { <see callback> });
+```
+
 #### Leave course
+
+#####xapicaliper.course.leave(config, statement, callback)
+
+A learning activity where a user leaves a course.
+
+The following metadata properties can be provided:
+
+* **`course`**        (required):             The URL of the course the student leaves
+
+An example could look like this:
+
+```
+xapicaliper.course.leave({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'course': 'https://bcourses.berkeley.edu/api/v1/courses/111'
+  }
+}, function() { <see callback> });
+```
 
 ### Assignment Activities
 
