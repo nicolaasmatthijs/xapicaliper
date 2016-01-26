@@ -1,7 +1,7 @@
 {
   "name": "xapicaliper",
   "description": "Easily convert learning activities to xAPI and Caliper statements",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/nicolaasmatthijs/xapicaliper"
