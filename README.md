@@ -76,6 +76,27 @@ The statement object contains the information about the learning activity and al
   * **`context.description`**   (required):             The description of the context (e.g., course description)
 * **`metadata`**                (required):             The metadata that describes the learning activity. Every type of learning activity requires a different set of metadata
 
+An example statement object could look like this:
+
+```
+{
+  'timestamp': '2016-01-01T05:23:42.000Z',
+  'actor': {
+    'id': 'http://berkeley.edu/directory/1234',
+    'id_source': 'http://berkeley.edu/directory',
+    'name': 'Nicolaas Matthijs',
+    'email': 'nicolaas@foo.com',
+    'created': '2014-03-01T01:28:12.000Z'
+  },
+  'context': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111',
+    'name': 'Biology 101',
+    'description': 'Introductory course in Biology'
+  },
+  'metadata': {}                    // As defined by learning activity type
+}
+```
+
 ##### callback
 
 The callback function is a standard callback function that is executed when the learning activity statement has been generated and stored in the configured Learning Record Store, if any.
