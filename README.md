@@ -258,21 +258,207 @@ xapicaliper.course.leave({ <see config> }, {
 
 #### Create assignment
 
+#####xapicaliper.assignment.create(config, statement, callback)
+
+A learning activity where a user creates a new assignment.
+
+The following metadata properties can be provided:
+
+* **`id`**                  (required):             The URL of the assignment
+* **`title`**               (required):             The title of the assignment
+* **`description`**         (optional):             The description of the assignment
+* **`due_at`**              (optional):             The due date of the assignment
+* **`max_points`**          (optional):             The maximum number of points for the assignment
+* **`submission_types`**    (optional):             An array of accepted submission types for the assignment entry
+
+An example could look like this:
+
+```
+xapicaliper.assignment.create({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111/assignments/333',
+    'title': 'Farm Animals Midterm',
+    'description': 'The midterm on Farm Animals in Medieval England',
+    'due_at': '2014-03-01T01:28:12.000Z',
+    'max_points': 50,
+    'submission_types': ['online_quiz', 'online_upload']
+  }
+}, function() { <see callback> });
+```
+
 #### View assignment
+
+#####xapicaliper.assignment.view(config, statement, callback)
+
+A learning activity where a user views an assignment.
+
+The following metadata properties can be provided:
+
+* **`assignment`**          (required):             The URL of the assignment that was viewed
+
+An example could look like this:
+
+```
+xapicaliper.assignment.view({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'assignment': 'https://bcourses.berkeley.edu/api/v1/courses/111/assignments/333',
+  }
+}, function() { <see callback> });
+```
 
 #### Submit assignment
 
+#####xapicaliper.assignment.submit(config, statement, callback)
+
+A learning activity where a user submits an assignment submission.
+
+The following metadata properties can be provided:
+
+* **`id`**                  (required):             The URL of the assignment submission
+* **`assignment`**          (required):             The URL of the assignment for the submission
+* **`submission`**          (optional):             The content of the assignment submission. This can be a text response or a link to the response
+
+An example could look like this:
+
+```
+xapicaliper.assignment.submit({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111/assignments/333/submissions/987',
+    'assignment': 'https://bcourses.berkeley.edu/api/v1/courses/111/assignments/333',
+    'submission': 'https://bcourses.berkeley.edu/api/v1/courses/111/files/444/download'
+  }
+}, function() { <see callback> });
+```
+
 #### Grade assignment
 
+#####xapicaliper.assignment.grade(config, statement, callback)
+
+A learning activity where a user grades an assignment submission.
+
+The following metadata properties can be provided:
+
+* **`id`**                 (required):             The URL of the assignment submission that is graded
+* **`grade`**              (required):             The grade for the assignment submission
+* **`grade_min`**          (optional):             The minimum possible grade for the assignment
+* **`grade_max`**          (optional):             The maximum possible grade for the assignment
+
+An example could look like this:
+
+```
+xapicaliper.assignment.submit({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111/assignments/333/submissions/987',
+    'grade': 45,
+    'grade_min': 0,
+    'grade_max': 50
+  }
+}, function() { <see callback> });
+```
+
 #### Assignment feedback
+
+#####xapicaliper.assignment.feedback(config, statement, callback)
+
+A learning activity where a user provides feedback on an assignment submission.
+
+The following metadata properties can be provided:
+
+* **`id`**                 (required):             The URL of the assignment submission feedback
+* **`submission`**         (required):             The URL of the assignment submission for the feedback
+* **`feedback`**           (required):             The feedback provided on the assignment submission
+
+An example could look like this:
+
+```
+xapicaliper.assignment.feedback({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111/assignments/333/submissions/987/feedback/579',
+    'submission': 'https://bcourses.berkeley.edu/api/v1/courses/111/assignments/333/submissions/987',
+    'feedback': 'Excellent work!'
+  }
+}, function() { <see callback> });
+```
 
 ### Discussion Activities
 
 #### Start discussion
 
+#####xapicaliper.discussion.start(config, statement, callback)
+
+A learning activity where a user starts a new discussion.
+
+The following metadata properties can be provided:
+
+* **`id`**            (required):             The URL of the discussion
+* **`title`**         (required):             The title of the discussion
+* **`body`**          (optional):             The body of the discussion
+
+An example could look like this:
+
+```
+xapicaliper.discussion.start({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111/discussions/222',
+    'title': 'Farm Animals Discussion',
+    'body': 'An informative discussion about your favourite farm animal'
+  }
+}, function() { <see callback> });
+```
+
 #### Read discussion
 
+#####xapicaliper.discussion.read(config, statement, callback)
+
+A learning activity where a user reads a discussion.
+
+The following metadata properties can be provided:
+
+* **`discussion`**    (required):             The URL of the discussion that was read
+
+An example could look like this:
+
+```
+xapicaliper.discussion.read({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'discussion': 'https://bcourses.berkeley.edu/api/v1/courses/111/discussions/222'
+  }
+}, function() { <see callback> });
+```
+
 #### Post to discussion
+
+#####xapicaliper.discussion.post(config, statement, callback)
+
+A learning activity where a user posts to a discussion.
+
+The following metadata properties can be provided:
+
+* **`id`**            (required):             The URL of the discussion entry that was posted
+* **`body`**          (required):             The body of the discussion entry
+* **`discussion`**    (required):             The URL of the discussion the discussion entry is made in
+* **`parent`**        (optional):             The URL of the discussion entry to which this discussion entry is a reply
+
+An example could look like this:
+
+```
+xapicaliper.discussion.post({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111/discussions/222/entries/456',
+    'body': 'I love chickens',
+    'discussion': 'https://bcourses.berkeley.edu/api/v1/courses/111/discussions/222',
+    'parent': 'https://bcourses.berkeley.edu/api/v1/courses/111/discussions/222/entries/123'
+  }
+}, function() { <see callback> });
+```
 
 ### File Activities
 
