@@ -78,6 +78,20 @@ The statement object contains the information about the learning activity and al
 
 ##### callback
 
+The callback function is a standard callback function that is executed when the learning activity statement has been generated and stored in the configured Learning Record Store, if any.
+
+It can be used in the following way:
+
+```
+xapicaliper.<domain>.<type>(config, statement, function(err, statement) {
+  if (err) {
+    // An error occured while generating or storing the statement
+  }
+
+  // Print the generated learning activity statement
+  console.log(statement);
+});
+```
 
 ## Learning Activities
 
