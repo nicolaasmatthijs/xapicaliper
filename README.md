@@ -106,3 +106,58 @@ The xAPI - Caliper utility currently supports the following learning activies:
 #### Navigate to course
 
 #### Navigate to page
+
+### Course Activities
+
+#### Create course
+
+#### Enroll course
+
+#### Leave course
+
+### Assignment Activities
+
+#### Create assignment
+
+#### View assignment
+
+#### Submit assignment
+
+#### Grade assignment
+
+#### Assignment feedback
+
+### Discussion Activities
+
+#### Start discussion
+
+#### Read discussion
+
+#### Post to discussion
+
+### File Activities
+
+#### Upload file
+
+#### Preview file
+
+#### Download file
+
+#####xapicaliper.file.download
+
+A learning activity where a user downloads a file.
+
+The following metadata properties can be provided:
+
+* **`file`**          (required):             The URL of the file that was downloaded
+
+An example could look like this:
+
+```
+xapicaliper.file.download({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'file': 'https://bcourses.berkeley.edu/api/v1/courses/111/files/444'
+  }
+}, function() { <see callback> });
+```
