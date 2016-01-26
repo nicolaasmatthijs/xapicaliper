@@ -40,6 +40,24 @@ The config object can have the following properties:
   * **`lrs.username`**          (optional):             The LRS username
   * **`lrs.password`**          (optional):             The LRS password
 
+An example config object could look like this:
+
+```
+{
+  'type': xapicaliper.CONSTANTS.TYPE.CALIPER,             // A Caliper statement will be generated
+  'platform': {
+    'url': 'https://bcourses.berkeley.edu/',
+    'name': 'bCourses',
+    'description': 'The UC Berkeley LMS'
+  },
+  'lrs': {                                                // Leave this empty to not automatically store the generated statement in an LRS
+    'endpoint': 'https://foo.bar/statements',             // The REST endpoint to post the generated statement to
+    'username': 'POoHJjcbl',
+    'password': 'kIRiY7v'
+  }
+}
+```
+
 ##### statement
 
 The statement object contains the information about the learning activity and always contains the following properties:
