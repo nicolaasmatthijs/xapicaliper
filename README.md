@@ -139,11 +139,59 @@ The xAPI - Caliper utility currently supports the following learning activies:
 
 #### Upload file
 
+#####xapicaliper.file.upload(config, statement, callback)
+
+A learning activity where a user uploads a new file.
+
+The following metadata properties can be provided:
+
+* **`id`**            (required):             The URL of the file that was uploaded
+* **`title`**         (required):             The title of the file
+* **`description`**   (optional):             The description of the file
+* **`url`**           (optional):             The URL at which the file can be downloaded
+* **`size`**          (optional):             The size of the file in bytes
+* **`mime_type`**     (optional):             The mime type of the file
+
+An example could look like this:
+
+```
+xapicaliper.file.preview({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'id': 'https://bcourses.berkeley.edu/api/v1/courses/111/files/444',
+    'title': 'Syllabus 101.pdf',
+    'description': 'The syllabus for Biology 101',
+    'url': 'https://bcourses.berkeley.edu/api/v1/courses/111/files/444/download',
+    'size': 1234,
+    'mime_type': 'application/pdf'
+  }
+}, function() { <see callback> });
+```
+
 #### Preview file
+
+#####xapicaliper.file.preview(config, statement, callback)
+
+A learning activity where a user previews a file.
+
+The following metadata properties can be provided:
+
+* **`file`**          (required):             The URL of the file that was downloaded
+
+An example could look like this:
+
+```
+xapicaliper.file.preview({ <see config> }, {
+  <see statement>,
+  'metadata': {
+    'file': 'https://bcourses.berkeley.edu/api/v1/courses/111/files/444'
+  }
+}, function() { <see callback> });
+```
 
 #### Download file
 
-#####xapicaliper.file.download
+#####xapicaliper.file.download(config, statement, callback)
 
 A learning activity where a user downloads a file.
 
