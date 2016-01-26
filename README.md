@@ -30,15 +30,15 @@ xapicaliper.<domain>.<type>(config, statement, callback);
 
 The config object can have the following properties:
 
-- **`type`**                  (optional):             The type of learning activity statement to generate. One of `xapicaliper.CONSTANTS.TYPE.XAPI` or `xapicaliper.CONSTANTS.TYPE.CALIPER`. Defaults to xAPI
-- **`platform`**              (required):             The information about the platform generating learning activities
-- **`platform`**             (required):             The URL of the platform generating learning activities
-- **`platform.name`**         (required):             The name of the platform generating learning activities
-- **`platform.description`**  (optional):             The description of the platform generating learning activities
-- **`lrs`**                   (optional):             The LRS configuration values. This should only be provided when this utility should also store the generated xAPI or Caliper statement in a Learning Record Store
-- **`lrs.endpoint`**          (optional):             The URL to the endpoint used for storing new xAPI or Caliper statements
-- **`lrs.username`**          (optional):             The LRS username
-- **`lrs.password`**          (optional):             The LRS password
+* **`type`**                  (optional):             The type of learning activity statement to generate. One of `xapicaliper.CONSTANTS.TYPE.XAPI` or `xapicaliper.CONSTANTS.TYPE.CALIPER`. Defaults to xAPI
+* **`platform`**              (required):             The information about the platform generating learning activities
+  * **`platform`**             (required):             The URL of the platform generating learning activities
+  * **`platform.name`**         (required):             The name of the platform generating learning activities
+  * **`platform.description`**  (optional):             The description of the platform generating learning activities
+* **`lrs`**                   (optional):             The LRS configuration values. This should only be provided when this utility should also store the generated xAPI or Caliper statement in a Learning Record Store
+  * **`lrs.endpoint`**          (optional):             The URL to the endpoint used for storing new xAPI or Caliper statements
+  * **`lrs.username`**          (optional):             The LRS username
+  * **`lrs.password`**          (optional):             The LRS password
 
 #### statement
 
